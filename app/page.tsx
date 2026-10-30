@@ -29,15 +29,11 @@ export default function Home() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-0" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-amber-500/30 via-yellow-400/20 to-orange-600/15 blur-[140px] pointer-events-none rounded-full z-0" />
 
-      {/* ================================================================== */}
-
-      {/* Header */}
       <header className="absolute top-6 md:top-8 left-0 right-0 z-50 flex items-center justify-between max-w-7xl mx-auto w-full px-6 md:px-12">
         <div className="font-mono text-xl md:text-lg tracking-wider font-bold bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600 bg-clip-text text-transparent">
           RAEHAN.
         </div>
 
-        {/* Menu Navigasi Desktop */}
         <nav className="hidden md:flex gap-12 text-lg font-unbounded text-gray-300">
           <a
             href="#about"
@@ -59,7 +55,6 @@ export default function Home() {
           </a>
         </nav>
 
-        {/* Tombol Hamburger Khusus HP */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col justify-center items-end w-10 h-10 space-y-1.5 focus:outline-none z-50 cursor-pointer"
@@ -76,7 +71,6 @@ export default function Home() {
           />
         </button>
 
-        {/* Dropdown Menu Mobile */}
         {menuOpen && (
           <div className="absolute top-16 right-6 left-6 bg-zinc-900/95 border border-amber-500/20 backdrop-blur-xl rounded-2xl p-6 flex flex-col gap-6 text-center shadow-2xl md:hidden z-40">
             <a
@@ -104,12 +98,10 @@ export default function Home() {
         )}
       </header>
 
-      {/* SECTION HOME UTAMA */}
       <section
         id="home"
         className="relative w-full min-h-screen pt-24 pb-12 flex flex-col justify-between overflow-visible"
       >
-        {/* CONTAINER LANYARD 3D DESKTOP */}
         {!isMobile && (
           <div className="hidden md:block absolute inset-x-0 top-0 h-[520px] z-20 pointer-events-none overflow-visible -ml-5">
             <div className="w-full h-full pointer-events-auto">
@@ -139,9 +131,7 @@ export default function Home() {
           </div>
         )}
 
-        {/* KONTEN UTAMA: NAMA & DESKRIPSI */}
         <div className="relative flex flex-col md:flex-row w-full items-center justify-between px-6 md:px-12 max-w-7xl mx-auto my-auto gap-6 md:gap-0 z-10">
-          {/* TAMPILAN CARD KHUSUS MOBILE */}
           {isMobile && (
             <div className="w-full h-[300px] sm:h-[350px] z-20 flex items-center justify-center pointer-events-auto order-1">
               <div className="relative w-[190px] sm:w-[210px] h-[280px] sm:h-[310px] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(245,158,11,0.35)] border border-amber-500/40">
@@ -157,7 +147,6 @@ export default function Home() {
             </div>
           )}
 
-          {/* SISI KIRI: NAMA */}
           <div className="w-full md:w-5/12 flex flex-col justify-center items-center md:items-start z-30 order-2 md:order-1 font-unbounded text-center md:text-left pointer-events-auto">
 
             <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
@@ -170,11 +159,8 @@ export default function Home() {
             <div className="w-12 h-1 bg-gradient-to-r from-amber-400 to-transparent rounded-full mt-3 hidden md:block" />
           </div>
 
-          {/* SPACER KOSONG DI TENGAH UNTUK AREA LANYARD */}
           <div className="hidden md:block w-2/12 h-1 pointer-events-none order-2" />
 
-          {/* SISI KANAN: DESKRIPSI SINGKAT */}
-          {/* SISI KANAN: DESKRIPSI SINGKAT (Seluruh blok digeser ke kanan) */}
           <div className="font-unbounded w-full md:w-5/12 flex flex-col justify-center items-center md:items-start z-30 order-3 text-center md:text-left pointer-events-auto md:translate-x-12">
             <span className="text-xs font-mono text-amber-400 uppercase tracking-wider block mb-2">
               — Fresh Graduate · Information Systems
@@ -185,7 +171,6 @@ export default function Home() {
               that solve real problems.
             </h2>
 
-            {/* Phapus translate-x dari <p> agar sejajar presisi dengan <h2> */}
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed w-full">
               An Information Systems graduate focused on web and mobile
               development, full-stack solutions, and database management.
@@ -193,12 +178,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* SECTION ACTION BUTTONS (DIBUAT LEBIH KE BAWAH DI SISI KIRI) */}
         <div className="relative w-full pt-8 md:pt-12 px-6 md:px-12 max-w-7xl mx-auto z-40">
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-            {/* Tombol Unduh CV */}
             <a
-              href="/cv.pdf"
+              href="/pdf/CV_RAEHAN RAMADHAN HAMZAH_ENG.pdf"
               target="_blank"
               className="group relative inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-zinc-950 font-bold text-xs sm:text-sm tracking-wide overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] hover:-translate-y-1 active:translate-y-0 active:scale-95 cursor-pointer z-50 w-full sm:w-auto font-unbounded"
             >
@@ -216,9 +199,8 @@ export default function Home() {
               </svg>
             </a>
 
-            {/* Tombol GitHub */}
             <a
-              href="https://github.com"
+              href="https://github.com/raehanramadhanhamzah"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-zinc-900/80 border border-zinc-800 text-gray-300 hover:text-white hover:border-amber-400/50 hover:bg-zinc-800/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 shadow-md hover:shadow-amber-500/10 cursor-pointer z-50 w-full sm:w-auto font-unbounded text-xs sm:text-sm"
@@ -232,9 +214,8 @@ export default function Home() {
               <span className="font-medium">GitHub</span>
             </a>
 
-            {/* Tombol LinkedIn */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/raehan-ramadhan-hamzah/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-zinc-900/80 border border-zinc-800 text-gray-300 hover:text-white hover:border-amber-400/50 hover:bg-zinc-800/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 shadow-md hover:shadow-amber-500/10 cursor-pointer z-50 w-full sm:w-auto font-unbounded text-xs sm:text-sm"
@@ -253,7 +234,6 @@ export default function Home() {
       <AboutMeSection />
       <ProjectsSection />
       <ContactsSection />
-      {/* Footer */}
       <footer className="relative py-6 text-center text-xs text-gray-500 z-20">
         © 2026. Built with Next.js & Tailwind CSS.
       </footer>

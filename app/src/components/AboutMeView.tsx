@@ -28,7 +28,6 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-// Component SVG Custom Berwarna Asli untuk Tableau
 function TableauIcon({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +37,6 @@ function TableauIcon({ className = "w-8 h-8" }: { className?: string }) {
   );
 }
 
-// Component SVG Custom Berwarna Asli untuk Power BI
 function PowerBIIcon({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,10 +130,8 @@ export default function AboutMeSection() {
       id="about"
       className="relative w-full py-20 px-6 md:px-12 max-w-7xl mx-auto text-white"
     >
-      {/* SISI ATAS: DESKRIPSI & CARD (POSISI DIPASIKAN SEJAJAR) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
-        {/* Kolom Kiri */}
         <div className="lg:col-span-6 flex flex-col justify-start">
           <h2 className="text-3xl md:text-4xl font-bold text-amber-400 mb-6 text-center md:text-left font-unbounded">
             About Me
@@ -162,7 +158,6 @@ export default function AboutMeSection() {
           </p>
         </div>
 
-        {/* Kolom Kanan: Card Sederhana Rapi (Di-offset lg:pt-14 agar sejajar dengan H3 Kiri) */}
         <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:pt-14">
           
           <div className="bg-zinc-900/50 border border-zinc-800/80 p-5 rounded-xl flex flex-col justify-start">
@@ -212,7 +207,6 @@ export default function AboutMeSection() {
         </div>
       </div>
 
-      {/* === TECH STACK SLIDER === */}
       <div className="mt-20">
         <div className="text-center mb-8">
           <h3 className="text-xl md:text-2xl font-bold font-unbounded text-white">

@@ -19,7 +19,6 @@ export default function ContactsView() {
       id="contacts"
       className="relative w-full pt-6 pb-20 px-6 md:px-12 max-w-7xl mx-auto text-zinc-100 flex flex-col items-center justify-center text-center"
     >
-      {/* Judul Section */}
       <div className="w-full mb-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-amber-400 mb-2 font-unbounded">
           Contacts
@@ -28,7 +27,6 @@ export default function ContactsView() {
       </div>
 
       <div className="w-full max-w-2xl flex flex-col items-center">
-        {/* Sub-heading & Deskripsi */}
         <h3 className="text-xl md:text-2xl font-bold leading-snug mb-3 font-unbounded text-zinc-100">
           Let’s Connect
         </h3>
@@ -37,10 +35,8 @@ export default function ContactsView() {
           I am currently open to full-time engineering roles, career opportunities, and professional collaborations. Feel free to reach out directly through any of the channels below.
         </p>
 
-        {/* List Kontak Minimalis dengan Icon Berwarna */}
         <div className="w-full divide-y divide-zinc-800/80 mb-10 text-left border-t border-b border-zinc-800/80">
           
-          {/* Email Click-to-Copy */}
           <button
             onClick={() => handleCopy("raehanramadhan005@gmail.com", "Email")}
             className="w-full flex items-center justify-between py-4 transition-colors text-left focus:outline-none"
@@ -57,7 +53,6 @@ export default function ContactsView() {
             </div>
           </button>
 
-          {/* Phone / WhatsApp Click-to-Copy */}
           <button
             onClick={() => handleCopy("+6281234567890", "Nomor telepon")}
             className="w-full flex items-center justify-between py-4 transition-colors text-left focus:outline-none"
@@ -74,7 +69,6 @@ export default function ContactsView() {
             </div>
           </button>
 
-          {/* Location */}
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center gap-3">
               <MapPin className="w-4 h-4 text-rose-400" />
@@ -86,10 +80,9 @@ export default function ContactsView() {
           </div>
         </div>
 
-        {/* Social Links dengan Ikon Berwarna Asli */}
         <div className="flex items-center justify-center gap-8">
           <a
-            href="https://github.com"
+            href="https://github.com/raehanramadhanhamzah"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-xs md:text-sm text-zinc-300 transition-opacity hover:opacity-80"
@@ -98,7 +91,7 @@ export default function ContactsView() {
             <span>GitHub</span>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/raehan-ramadhan-hamzah/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-xs md:text-sm text-zinc-300 transition-opacity hover:opacity-80"

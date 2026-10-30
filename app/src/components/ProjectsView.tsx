@@ -35,24 +35,18 @@ export default function ProjectsSection() {
           Projects
         </h2>
 
-        {/* Grid List Projects dengan items-stretch agar tinggi card sejajar */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 items-stretch">
           {projectsData.map((project, index) => {
             const projectNumber = String(index + 1).padStart(2, "0");
 
             return (
-              /* WRAPPER KARTU */
               <div key={project.id} className="relative group pt-4 flex flex-col">
-                {/* NOMOR JUMBO OVERLAPPING */}
                 <span className="absolute -top-6 -left-4 z-30 font-unbounded text-6xl sm:text-7xl md:text-8xl font-black bg-gradient-to-b from-amber-200 via-amber-400 to-amber-600/20 bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] select-none pointer-events-none transition-transform duration-500 group-hover:-translate-y-1">
                   {projectNumber}
                 </span>
 
-                {/* KARTU UTAMA */}
                 <div className="relative bg-zinc-950 rounded-[2.5rem] overflow-hidden border border-zinc-900 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-1 flex flex-col flex-grow shadow-2xl z-10">
-                  {/* 1. AREA BAGIAN ATAS: SHOWCASE GAMBAR */}
                   <div className="relative w-full h-60 sm:h-64 bg-zinc-900/40 overflow-hidden flex items-center justify-center p-4 shrink-0">
-                    {/* Icon Platform (Web/Mobile) */}
                     <div className="absolute top-4 right-6 z-20 p-2.5 rounded-2xl bg-zinc-900/80 backdrop-blur-md text-amber-400">
                       {project.type === "mobile" ? (
                         <svg
@@ -74,7 +68,6 @@ export default function ProjectsSection() {
                       )}
                     </div>
 
-                    {/* Gambar Screenshot */}
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
                       <Image
                         src={project.images[0]}
@@ -85,19 +78,16 @@ export default function ProjectsSection() {
                     </div>
                   </div>
 
-                  {/* 2. AREA BAGIAN BAWAH: INFORMASI & DETAIL */}
                   <div className="p-6 md:p-8 flex flex-col justify-between flex-grow">
                     <div>
                       <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-unbounded leading-tight group-hover:text-amber-400 transition-colors">
                         {project.title}
                       </h3>
 
-                      {/* Teks Deskripsi Full Paragraf (Tanpa Line Clamp) */}
                       <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-5 text-justify">
                         {project.description}
                       </p>
 
-                      {/* TAGS */}
                       <div className="flex flex-wrap gap-2 mb-6">
                         {project.tags.map((tag, idx) => (
                           <span
@@ -110,7 +100,6 @@ export default function ProjectsSection() {
                       </div>
                     </div>
 
-                    {/* FOOTER KARTU */}
                     <div className="flex justify-between items-center pt-4 border-t border-zinc-900 text-xs font-semibold font-mono">
                       <button
                         onClick={() => openGallery(project)}
@@ -156,7 +145,6 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      {/* ================= MODAL POPUP GALERI (Hanya untuk Gambar/Slider) ================= */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8">
           <div className="relative max-w-4xl w-full bg-zinc-950 border border-zinc-800 rounded-3xl p-6 flex flex-col gap-4 shadow-2xl">

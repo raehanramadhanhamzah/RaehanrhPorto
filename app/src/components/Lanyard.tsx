@@ -175,11 +175,11 @@ const CARD_SIZES: Record<string, [number, number]> = {
 const ANCHORS: Record<string, number> = { left: 0.27, center: 0.5, right: 0.73 };
 const THICKNESS = 0.018;
 const BEVEL = 0.007;
-const JOINTS = 5; // Ditingkatkan untuk kurva loop leher yang lebih natural
+const JOINTS = 5; 
 const NODE_WEIGHT = 1 / 0.05;
 const MAX_STEP = 1 / 960;
 const ITERATIONS = 2;
-const SAMPLES = 128; // Sample ditingkatkan agar resolusi tali melingkar tetap tinggi
+const SAMPLES = 128; 
 const FOV = 24;
 const STRAP_WIDTH = 0.36;
 const RING_RADIUS = 0.095;
@@ -380,7 +380,6 @@ const loadImage = (
   return promise;
 };
 
-// Mengembalikan Layout ke Asli (1 Lubang di Tengah)
 const cardLayout = (orientation: Orientation, cornerRadius: number): CardLayout => {
   const [width, height] = CARD_SIZES[orientation] || CARD_SIZES.portrait;
   const radius = mix(0.03, Math.min(width, height) * 0.2, clamp(cornerRadius, 0, 1));
@@ -634,7 +633,6 @@ const paintStrap = (canvas: HTMLCanvasElement, image: HTMLImageElement | null, c
   return along / across;
 };
 
-// Mengubah struktur Simulation untuk mendukung jalur kiri & kanan menuju 1 titik (Loop)
 const createSimulation = (): Simulation => {
   const vectors = () => Array.from({ length: JOINTS + 1 }, () => new THREE.Vector3());
   return {
@@ -660,7 +658,7 @@ const createSimulation = (): Simulation => {
       angular: new THREE.Vector3(),
       mass: 1,
       inverseInertia: new THREE.Vector3(1, 1, 1),
-      hang: new THREE.Vector3() // Tetap 1 titik gantungan di tengah
+      hang: new THREE.Vector3() 
     },
     grab: null,
     turn: 0,
@@ -908,8 +906,8 @@ const stepSimulation = (sim: Simulation, dt: number, physics: Physics, time: num
     
     for (let iteration = 0; iteration < ITERATIONS; iteration++) {
       for (let i = 0; i < JOINTS; i++) {
-        solveSegment(sim, i, h, physics, true); // Tarikan tali kiri
-        solveSegment(sim, i, h, physics, false); // Tarikan tali kanan
+        solveSegment(sim, i, h, physics, true); 
+        solveSegment(sim, i, h, physics, false);
       }
       if (grab) solvePin(body, grab, pin);
     }
@@ -939,7 +937,6 @@ const stepSimulation = (sim: Simulation, dt: number, physics: Physics, time: num
     if (body.velocity.lengthSq() > 3600) body.velocity.setLength(60);
     if (body.angular.lengthSq() > 1600) body.angular.setLength(40);
 
-    // Keduanya terhubung ke 1 titik gantungan di ID Card
     nodesL[JOINTS].copy(body.hang).applyQuaternion(body.quaternion).add(body.position);
     nodesR[JOINTS].copy(body.hang).applyQuaternion(body.quaternion).add(body.position);
     
@@ -1104,7 +1101,6 @@ const Lanyard = ({
     const frontMesh = new THREE.Mesh(undefined, frontMaterial);
     const backMesh = new THREE.Mesh(undefined, backMaterial);
     
-    // 1 Cincin Gantungan ID Card
     const ring = new THREE.Mesh(new THREE.TorusGeometry(RING_RADIUS, RING_TUBE, 18, 72), metalMaterial);
     ring.rotation.y = Math.PI / 2 - 0.7;
     
@@ -1116,7 +1112,6 @@ const Lanyard = ({
     band.frustumCulled = false;
     scene.add(band);
 
-    // 1 Penjepit Besi 
     const clampGroup = new THREE.Group();
     const clampMesh = new THREE.Mesh(buildClampGeometry(STRAP_WIDTH), metalMaterial);
     clampMesh.position.y = EYELET_RADIUS + CLAMP_BODY / 2 - 0.004;
@@ -1193,7 +1188,6 @@ const Lanyard = ({
       const cardTop = viewHeight / 2 - viewHeight * mix(0.12, 0.42, clamp(s.strapLength, 0, 1));
       const hangTop = cardTop + (layout.ringY - layout.height / 2);
       
-      // Mengatur Lebar Bukaan Leher (Loop)
       const neckWidth = 0.15 * viewWidth; 
       sim.anchorL.set(anchorX - neckWidth / 2, anchorY, 0);
       sim.anchorR.set(anchorX + neckWidth / 2, anchorY, 0);
@@ -1304,7 +1298,7 @@ const Lanyard = ({
     };
 
     const updateBand = () => {
-      const hang = sim.nodesL[JOINTS]; // Karena L & R berhenti di titik tengah yang sama (gantungan kartu)
+      const hang = sim.nodesL[JOINTS]; 
       const reach = EYELET_RADIUS + CLAMP_BODY + 0.05;
       
       let guideL = JOINTS - 1;
@@ -1320,18 +1314,16 @@ const Lanyard = ({
       const mouth = new THREE.Vector3().copy(hang).addScaledVector(axis, reach);
       const tuck = new THREE.Vector3().copy(hang).addScaledVector(axis, EYELET_RADIUS + CLAMP_BODY * 0.35);
 
-      // Membentuk Kurva Lingkaran Utuh (Loop)
       controls.length = 0;
       controls.push(tuck, mouth); 
-      for (let i = guideL; i >= 0; i--) controls.push(sim.nodesL[i]); // Naik dari kiri
+      for (let i = guideL; i >= 0; i--) controls.push(sim.nodesL[i]); 
       
-      // Node tambahan untuk bagian melingkar di belakang leher
       const backNeck = scratch.b.addVectors(sim.anchorL, sim.anchorR).multiplyScalar(0.5);
-      backNeck.z -= 0.3; // Dorong ke arah dalam (belakang kamera) agar melengkung realistis
-      backNeck.y += 0.1; // Naikkan sedikit di punggung
+      backNeck.z -= 0.3; 
+      backNeck.y += 0.1; 
       controls.push(backNeck);
       
-      for (let i = 0; i <= guideR; i++) controls.push(sim.nodesR[i]); // Turun ke kanan
+      for (let i = 0; i <= guideR; i++) controls.push(sim.nodesR[i]); 
       controls.push(mouth, tuck);
       
       curve.updateArcLengths();
@@ -1358,7 +1350,7 @@ const Lanyard = ({
         side.normalize();
         if (i > 0 && side.dot(sides[i - 1]) < 0) side.negate();
         
-        // Memastikan rotasi tali tidak terpelintir di leher
+        
         const curveProgress = i / (SAMPLES - 1);
         const distanceFromNeck = Math.abs(curveProgress - 0.5) * 2; 
         const angle = -sim.twist * Math.pow(Math.min(1, distanceFromNeck / held), 1.3);
@@ -1387,7 +1379,7 @@ const Lanyard = ({
       normal.needsUpdate = true;
       uv.needsUpdate = true;
 
-      // Posisikan penjepit besi
+     
       across.copy(sides[0]).addScaledVector(axis, -sides[0].dot(axis)).normalize();
       facing.crossVectors(across, axis).normalize();
       work.basis.makeBasis(across, axis, facing);

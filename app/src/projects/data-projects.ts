@@ -2,7 +2,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  type: "web" | "mobile"; // Tipe platform project
+  type: "web" | "mobile"; 
   tags: string[];
   images: string[];
   github?: string;
@@ -12,12 +12,13 @@ export interface Project {
 export const projectsData: Project[] = [
   {
     id: 1,
-    title: "Guitar Chord Learning App - 3D Augmented Reality",
+    title: "Guitar Chord Learning App 3D Augmented Reality",
     description:
       "An Android-based guitar chord learning application developed using markerless 3D Augmented Reality (AR). The application provides 3D visualization of guitar chord finger positions, allowing users to explore chord formations through interactive features such as 3D object rotation, dragging, zooming, finger movement animations, and chord audio playback. The application was developed to provide an alternative visual learning medium for users who want to learn guitar chords.",
     type: "mobile",
-    tags: [ "Unity", "Blender", "C#"],
+    tags: ["Unity", "Blender", "C#"],
     images: [
+      "/img_projects/project1-6.png",
       "/img_projects/project1-1.jpeg",
       "/img_projects/project1-2.jpeg",
       "/img_projects/project1-3.jpeg",
@@ -29,11 +30,21 @@ export const projectsData: Project[] = [
   },
   {
     id: 2,
-    title: "LaporPak: Sistem Pelaporan Masyarakat Terintegrasi dengan Instansi Pemerintah Berbasis Web",
+    title:
+      "LaporPak: Sistem Pelaporan Masyarakat Terintegrasi dengan Instansi Pemerintah Berbasis Web",
     description:
       "LaporPak is an integrated digital platform designed to accelerate emergency reporting and rescue operations for the public and the Makassar Fire Department. In this team project, I served as the Backend Developer, taking full responsibility for building the core server architecture and securing data flows. My responsibilities included designing RESTful APIs using Node.js and the Hapi framework, managing user and report databases using MongoDB, implementing role-based authentication security (for citizens, staff, and administrators), and integrating media storage for photo and video evidence.",
     type: "web",
-    tags: ["React.js", "Tailwind CSS", "Node.js", "Hapi.js", "MongoDB", "Cloudinary", "RESTful API", "BERT AI Model"],
+    tags: [
+      "React.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Hapi.js",
+      "MongoDB",
+      "Cloudinary",
+      "RESTful API",
+      "BERT AI Model",
+    ],
     images: [
       "/img_projects/project2-1.png",
       "/img_projects/project2-2.png",
@@ -46,7 +57,8 @@ export const projectsData: Project[] = [
   {
     id: 3,
     title: "International Class Student Website (Universitas Hasanuddin)",
-    description: "The Hasanuddin University International Class Student Website is a digital platform integrated with the campus academic information system (SIAKAD) to support the digitalization of academic services, international class program administration, and information management for students, staff, and administrators. In this team project, I served as the Frontend & Backend Developer for the Events and News modules, while also holding full responsibility as the Quality Assurance (QA) Tester. My core contributions included the end-to-end development of features for creating, updating, and managing campus news and event data, as well as leading comprehensive system testing—ranging from API validation, CRUD functionality testing, security assessments, to performance testing (load testing) using JMeter to ensure system stability under various load scenarios.",
+    description:
+      "The Hasanuddin University International Class Student Website is a digital platform integrated with the campus academic information system (SIAKAD) to support the digitalization of academic services, international class program administration, and information management for students, staff, and administrators. In this team project, I served as the Frontend & Backend Developer for the Events and News modules, while also holding full responsibility as the Quality Assurance (QA) Tester. My core contributions included the end-to-end development of features for creating, updating, and managing campus news and event data, as well as leading comprehensive system testing—ranging from API validation, CRUD functionality testing, security assessments, to performance testing (load testing) using JMeter to ensure system stability under various load scenarios.",
     type: "web",
     tags: ["Laravel", "Tailwind CSS", "MySQL", "RESTful API"],
     images: [
@@ -87,5 +99,33 @@ export const projectsData: Project[] = [
       "/img_projects/project5-4.png",
     ],
     github: "https://github.com/raehanramadhanhamzah/PROJECT_VR_KELOMPOK_3",
+  },
+  {
+    id: 6,
+    title: "ZooLearning App",
+    description:
+      "Developed using Android Studio, ZooLearning is an Android educational application designed to help users explore diverse animal species through categorized lists, detailed descriptions, and custom views. Technically, the app utilizes Retrofit for network requests to pull data from external REST APIs on background threads, ensuring high performance. It also integrates local storage solutions (SQLite/SharedPreferences) for data persistence and leverages modern UI components including RecyclerView, Intents, and the Navigation Component for seamless screen transitions.",
+    type: "web",
+    tags: ["Android Studio", "REST API", "Retrofit", "SQLite", ],
+    images: [
+      "/img_projects/project6-1.jpeg",
+      "/img_projects/project6-2.jpeg",
+      "/img_projects/project6-3.jpeg",
+    ],
+    github: "https://github.com/raehanramadhanhamzah/ZooLearning",
+  },
+  {
+    id: 7,
+    title: "Web Rental Mobilku",
+    description:
+      "Developed using Android Studio, ZooLearning is an Android educational application designed to help users explore diverse animal species through categorized lists, detailed descriptions, and custom views. Technically, the app utilizes Retrofit for network requests to pull data from external REST APIs on background threads, ensuring high performance. It also integrates local storage solutions (SQLite/SharedPreferences) for data persistence and leverages modern UI components including RecyclerView, Intents, and the Navigation Component for seamless screen transitions.",
+    type: "web",
+    tags: ["Android Studio", "REST API", "Retrofit", "SQLite", ],
+    images: [
+      "/img_projects/project6-1.png",
+      "/img_projects/project6-2.png",
+      "/img_projects/project6-3.png",
+    ],
+    github: "https://github.com/raehanramadhanhamzah/Website-Rental-Mobilku",
   },
 ];

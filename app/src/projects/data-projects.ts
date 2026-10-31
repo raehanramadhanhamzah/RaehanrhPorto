@@ -2,7 +2,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  type: "web" | "mobile"; 
+  type: "web" | "mobile" | "dashboard"; 
   tags: string[];
   images: string[];
   github?: string;
@@ -116,16 +116,24 @@ export const projectsData: Project[] = [
   },
   {
     id: 7,
-    title: "Web Rental Mobilku",
-    description:
-      "Developed using Android Studio, ZooLearning is an Android educational application designed to help users explore diverse animal species through categorized lists, detailed descriptions, and custom views. Technically, the app utilizes Retrofit for network requests to pull data from external REST APIs on background threads, ensuring high performance. It also integrates local storage solutions (SQLite/SharedPreferences) for data persistence and leverages modern UI components including RecyclerView, Intents, and the Navigation Component for seamless screen transitions.",
-    type: "web",
-    tags: ["Android Studio", "REST API", "Retrofit", "SQLite", ],
+    title: "Retail Store 2012-2015 Dashboard",
+    description:"This interactive Power BI dashboard analyzes a Kaggle dataset containing multi-national retail store transaction data from 2012 to 2015. At the top, the dashboard displays core KPIs (Total Sales, Total Profit, and Profit Ratio) alongside a Sales Trend line chart that monitors monthly performance changes. The geographic performance is broken down through a Sales by Country table and a Total Sales by City bar chart to identify top-performing regions. Product performance is evaluated using a Sales vs Profit by Sub-Category matrix to compare revenue against margins, supported by Sales Category breakdown. Finally, the Top 5 Cities by Sales and Profit pie charts provide a direct comparison of which cities generate the highest volume versus the highest net returns.",
+    type: "dashboard",
+    tags: ["Power BI", "Data Analysis", "Kaggle", ],
     images: [
-      "/img_projects/project6-1.png",
-      "/img_projects/project6-2.png",
-      "/img_projects/project6-3.png",
+      "/img_projects/project7-1.png",
     ],
-    github: "https://github.com/raehanramadhanhamzah/Website-Rental-Mobilku",
+    link: "https://app.powerbi.com/reportEmbed?reportId=477cc006-f6e2-4b4f-9d9d-bc7e2b6c81ba&autoAuth=true&ctid=b6871fca-931c-4c5f-9df5-247fcf04d750",
+  },
+  {
+    id: 8,
+    title: "E-Commerce Fashion Sales Performance Dashboard",
+    description:"Built with Tableau, an interactive dashboard examines historical sales transaction data from an online fashion retail store. At the upper left, a Top Selling Products bar chart displays the most popular fashion brands based on the distinct count of order IDs over the past three months. Right beside it, a Sales Trend line chart tracks the overall monthly revenue growth (Sale Price) from April to June. At the lower left, a Product Comparison pie chart breaks down the sales share percentage among three specific products (focusing on Calvin Klein apparel). Finally, at the lower right, a Distributor Performance horizontal bar chart compares the total sales revenue generated across different distributor locations, including Chicago, Los Angeles, and Memphis.",
+    type: "dashboard",
+    tags: ["Tableau", "Data Analysis", "Kaggle"],
+    images: [
+      "/img_projects/project8-1.png",
+    ],
+    link: "https://app.powerbi.com/reportEmbed?reportId=477cc006-f6e2-4b4f-9d9d-bc7e2b6c81ba&autoAuth=true&ctid=b6871fca-931c-4c5f-9df5-247fcf04d750",
   },
 ];

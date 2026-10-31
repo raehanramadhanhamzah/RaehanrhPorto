@@ -4,7 +4,6 @@ import React from "react";
 import { 
   GithubIcon, 
   LinkedinIcon, 
-  InstagramIcon 
 } from "./Icons";
 import { Mail, MapPin, Phone, Copy } from "lucide-react";
 
@@ -98,15 +97,6 @@ export default function ContactsView() {
           >
             <LinkedinIcon className="w-4 h-4" />
             <span>LinkedIn</span>
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs md:text-sm text-zinc-300 transition-opacity hover:opacity-80"
-          >
-            <InstagramIcon className="w-4 h-4" />
-            <span>Instagram</span>
           </a>
         </div>
       </div>

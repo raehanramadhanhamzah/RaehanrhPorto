@@ -21,7 +21,7 @@ export default function ProjectsSection() {
   const prevImage = () => {
     if (!selectedProject) return;
     setCurrentImgIndex((prev) =>
-      prev === 0 ? selectedProject.images.length - 1 : prev - 1
+      prev === 0 ? selectedProject.images.length - 1 : prev - 1,
     );
   };
 
@@ -40,7 +40,10 @@ export default function ProjectsSection() {
             const projectNumber = String(index + 1).padStart(2, "0");
 
             return (
-              <div key={project.id} className="relative group pt-4 flex flex-col">
+              <div
+                key={project.id}
+                className="relative group pt-4 flex flex-col"
+              >
                 <span className="absolute -top-6 -left-4 z-30 font-unbounded text-6xl sm:text-7xl md:text-8xl font-black bg-gradient-to-b from-amber-200 via-amber-400 to-amber-600/20 bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] select-none pointer-events-none transition-transform duration-500 group-hover:-translate-y-1">
                   {projectNumber}
                 </span>
@@ -49,14 +52,39 @@ export default function ProjectsSection() {
                   <div className="relative w-full h-60 sm:h-64 bg-zinc-900/40 overflow-hidden flex items-center justify-center p-4 shrink-0">
                     <div className="absolute top-4 right-6 z-20 p-2.5 rounded-2xl bg-zinc-900/80 backdrop-blur-md text-amber-400">
                       {project.type === "mobile" ? (
+                        // Icon Mobile / HP
                         <svg
                           className="w-4 h-4 fill-none stroke-current stroke-2"
                           viewBox="0 0 24 24"
                         >
                           <rect x="6" y="2" width="12" height="20" rx="2.5" />
-                          <line x1="10" y1="18" x2="14" y2="18" strokeLinecap="round" />
+                          <line
+                            x1="10"
+                            y1="18"
+                            x2="14"
+                            y2="18"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      ) : project.type === "dashboard" ? (
+                        // Icon Dashboard (Chart / Bar Graph - Power BI & Tableau Style)
+                        <svg
+                          className="w-4 h-4 fill-none stroke-current stroke-2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3 3v18h18"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M18 17V9M13 17V5M8 17v-4"
+                          />
                         </svg>
                       ) : (
+                        // Icon Web / Monitor (Default)
                         <svg
                           className="w-4 h-4 fill-none stroke-current stroke-2"
                           viewBox="0 0 24 24"
@@ -110,7 +138,11 @@ export default function ProjectsSection() {
                           className="w-3.5 h-3.5 fill-none stroke-current stroke-2 transition-transform duration-300 group-hover/btn:translate-x-1"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                          />
                         </svg>
                       </button>
 
@@ -130,7 +162,7 @@ export default function ProjectsSection() {
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1"
+                            className="text-gray-400 hover:text-white transition-colors flex items-center gap-1"
                           >
                             Demo ↗
                           </a>
@@ -193,7 +225,12 @@ export default function ProjectsSection() {
                       : "border-transparent opacity-50 hover:opacity-100"
                   }`}
                 >
-                  <Image src={img} alt="thumbnail" fill className="object-cover" />
+                  <Image
+                    src={img}
+                    alt="thumbnail"
+                    fill
+                    className="object-cover"
+                  />
                 </button>
               ))}
             </div>

@@ -31,7 +31,7 @@ export const projectsData: Project[] = [
   {
     id: 2,
     title:
-      "LaporPak: Sistem Pelaporan Masyarakat Terintegrasi dengan Instansi Pemerintah Berbasis Web",
+      "LaporPak Integrated Web Based Citizen Reporting System",
     description:
       "LaporPak is an integrated digital platform designed to accelerate emergency reporting and rescue operations for the public and the Makassar Fire Department. In this team project, I served as the Backend Developer, taking full responsibility for building the core server architecture and securing data flows. My responsibilities included designing RESTful APIs using Node.js and the Hapi framework, managing user and report databases using MongoDB, implementing role-based authentication security (for citizens, staff, and administrators), and integrating media storage for photo and video evidence.",
     type: "web",

@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { projectsData, Project } from "@/app/src/projects/data-projects";
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  const locale = useLocale() as "en" | "id";
+  const t = useTranslations("Projects");
 
   const openGallery = (project: Project) => {
     setSelectedProject(project);
@@ -32,7 +36,7 @@ export default function ProjectsSection() {
     >
       <div className="max-w-6xl mx-auto w-full z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-amber-400 mb-16 text-center md:text-left font-unbounded">
-          Projects
+          {t("title")}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 items-stretch">
@@ -52,7 +56,6 @@ export default function ProjectsSection() {
                   <div className="relative w-full h-60 sm:h-64 bg-zinc-900/40 overflow-hidden flex items-center justify-center p-4 shrink-0">
                     <div className="absolute top-4 right-6 z-20 p-2.5 rounded-2xl bg-zinc-900/80 backdrop-blur-md text-amber-400">
                       {project.type === "mobile" ? (
-                        // Icon Mobile / HP
                         <svg
                           className="w-4 h-4 fill-none stroke-current stroke-2"
                           viewBox="0 0 24 24"
@@ -67,7 +70,6 @@ export default function ProjectsSection() {
                           />
                         </svg>
                       ) : project.type === "dashboard" ? (
-                        // Icon Dashboard (Chart / Bar Graph - Power BI & Tableau Style)
                         <svg
                           className="w-4 h-4 fill-none stroke-current stroke-2"
                           viewBox="0 0 24 24"
@@ -84,7 +86,6 @@ export default function ProjectsSection() {
                           />
                         </svg>
                       ) : (
-                        // Icon Web / Monitor (Default)
                         <svg
                           className="w-4 h-4 fill-none stroke-current stroke-2"
                           viewBox="0 0 24 24"
@@ -99,7 +100,7 @@ export default function ProjectsSection() {
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
                       <Image
                         src={project.images[0]}
-                        alt={project.title}
+                        alt={project.title[locale]}
                         fill
                         className="object-contain transition-transform duration-500 group-hover:scale-105"
                       />
@@ -109,11 +110,11 @@ export default function ProjectsSection() {
                   <div className="p-6 md:p-8 flex flex-col justify-between flex-grow">
                     <div>
                       <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-unbounded leading-tight group-hover:text-amber-400 transition-colors">
-                        {project.title}
+                        {project.title[locale]}
                       </h3>
 
                       <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-5 text-justify">
-                        {project.description}
+                        {project.description[locale]}
                       </p>
 
                       <div className="flex flex-wrap gap-2 mb-6">
@@ -133,7 +134,7 @@ export default function ProjectsSection() {
                         onClick={() => openGallery(project)}
                         className="group/btn inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors py-1 cursor-pointer"
                       >
-                        <span>Explore Gallery</span>
+                        <span>{t("galleryButton")}</span>
                         <svg
                           className="w-3.5 h-3.5 fill-none stroke-current stroke-2 transition-transform duration-300 group-hover/btn:translate-x-1"
                           viewBox="0 0 24 24"
@@ -154,7 +155,7 @@ export default function ProjectsSection() {
                             rel="noopener noreferrer"
                             className="text-gray-400 hover:text-white transition-colors flex items-center gap-1"
                           >
-                            GitHub ↗
+                            {t("githubButton")} ↗
                           </a>
                         )}
                         {project.link && (
@@ -164,7 +165,7 @@ export default function ProjectsSection() {
                             rel="noopener noreferrer"
                             className="text-gray-400 hover:text-white transition-colors flex items-center gap-1"
                           >
-                            Demo ↗
+                            {t("demoButton")} ↗
                           </a>
                         )}
                       </div>
@@ -182,7 +183,7 @@ export default function ProjectsSection() {
           <div className="relative max-w-4xl w-full bg-zinc-950 border border-zinc-800 rounded-3xl p-6 flex flex-col gap-4 shadow-2xl">
             <div className="flex justify-between items-center">
               <h4 className="text-lg md:text-xl font-bold text-white font-unbounded">
-                {selectedProject.title}
+                {selectedProject.title[locale]}
               </h4>
               <button
                 onClick={() => setSelectedProject(null)}

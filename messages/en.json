@@ -1,0 +1,60 @@
+{
+  "Navbar": {
+    "about": "About Me",
+    "projects": "Projects",
+    "contacts": "Contacts"
+  },
+  "Hero": {
+    "greeting": "Hello, I'm",
+    "name": "Raehan Ramadhan Hamzah",
+    "status": "— Fresh Graduate · Information Systems",
+    "title": "Building digital solutions that solve real problems.",
+    "description": "An Information Systems graduate focused on web and mobile development, full-stack solutions, and database management.",
+    "cvButton": "Download CV",
+    "githubButton": "GitHub",
+    "linkedinButton": "LinkedIn"
+  },
+  "About": {
+    "title": "About Me",
+    "heading": "Connecting Information Systems and IT Through Passionate Programming",
+    "description": "I am an Information Systems graduate from Hasanuddin University (2022–2026), specializing in full-stack web development, mobile solutions, and data analytics. My technical foundation spans core languages including JavaScript, TypeScript, Python, PHP, Java, and C/C++, paired with modern web frameworks like Next.js, Svelte, Laravel, Express.js, and FastAPI. I am experienced in designing and testing RESTful APIs using Postman, managing databases across MySQL and MongoDB, and developing mobile applications using Flutter and Android Studio. Additionally, I leverage tools such as Power BI, Tableau, Blender, and Unity for data visualization, business intelligence, 3D modeling, and interactive augmented reality solutions.",
+    "expertise": {
+      "web": {
+        "title": "Web Engineering",
+        "description": "Developing modern web applications using React, Svelte, Next.js, Laravel, and Express.js with clean architecture."
+      },
+      "mobile": {
+        "title": "Mobile & AR Tech",
+        "description": "Building cross-platform mobile apps with Flutter & Android Studio alongside interactive Unity & Blender AR solutions."
+      },
+      "database": {
+        "title": "Database & Analytics",
+        "description": "Managing relational & NoSQL databases (MySQL, MongoDB) and visualizing insights with Power BI & Tableau."
+      },
+      "qa": {
+        "title": "QA & Systems Design",
+        "description": "Applying Software Testing & QA, RESTful API design with Postman, and end-to-end information systems architecture."
+      }
+    },
+    "techStack": {
+      "title": "Technologies & Tools",
+      "description": "Programming languages, frameworks, and software tools I work with",
+      "instruction": "(Drag/Slide to explore)"
+    }
+  },
+    "Projects": {
+      "title": "Projects",
+      "galleryButton": "Explore Gallery",
+      "githubButton": "GitHub",
+      "demoButton": "Demo"
+    },
+    "Contacts": {
+      "title": "Contacts",
+      "heading": "Let's Connect",
+      "description": "I am currently open to full-time technical roles, career opportunities, and professional collaborations. Please feel free to reach out to me directly through any of the channels below.",
+      "locationLabel": "Location",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone/WhatsApp"
+    }
+  }
+

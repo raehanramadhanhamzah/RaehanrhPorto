@@ -134,27 +134,15 @@ export default function AboutMeSection() {
         
         <div className="lg:col-span-6 flex flex-col justify-start">
           <h2 className="text-3xl md:text-4xl font-bold text-amber-400 mb-6 text-center md:text-left font-unbounded">
-            About Me
+            Tentang Saya
           </h2>
 
           <h3 className="text-xl md:text-2xl font-bold leading-snug mb-4 font-unbounded text-zinc-100">
-            Connecting Information Systems and IT Through Passionate
-            Programming
+            Menghubungkan Sistem Informasi dan Teknologi Informasi Melalui Pemrograman
           </h3>
 
           <p className="text-gray-300 text-sm md:text-base leading-relaxed text-justify">
-            I am an Information Systems graduate from Hasanuddin University (2022-2026)
-            specializing in full-stack web development, mobile solutions, and
-            data analytics. My technical foundation spans across core
-            languages including JavaScript, TypeScript, Python, PHP, Java, and
-            C/C++, paired with modern web frameworks like Next.js, Svelte,
-            Laravel, Express.js, and FastAPI. I am experienced in designing
-            and testing RESTful APIs using Postman, managing databases across
-            MySQL and MongoDB, and developing mobile applications using
-            Flutter and Android Studio. Additionally, I leverage tools such as
-            Power BI, Tableau, Blender, and Unity for data visualization,
-            business intelligence, 3D modeling, and interactive augmented
-            reality solutions.
+            Saya merupakan lulusan Sistem Informasi Universitas Hasanuddin (2022–2026) dengan fokus pada pengembangan aplikasi web full-stack, aplikasi mobile, dan analisis data. Saya memiliki dasar teknis dalam berbagai bahasa pemrograman seperti JavaScript, TypeScript, Python, PHP, Java, dan C/C++, serta framework web modern seperti Next.js, Svelte, Laravel, Express.js, dan FastAPI. Saya berpengalaman dalam merancang dan menguji RESTful API menggunakan Postman, mengelola database MySQL dan MongoDB, serta mengembangkan aplikasi mobile menggunakan Flutter dan Android Studio. Selain itu, saya menggunakan Power BI, Tableau, Blender, dan Unity untuk visualisasi data, business intelligence, pemodelan 3D, dan solusi augmented reality interaktif.
           </p>
         </div>
 
@@ -163,44 +151,40 @@ export default function AboutMeSection() {
           <div className="bg-zinc-900/50 border border-zinc-800/80 p-5 rounded-xl flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-2.5">
               <Code2 className="w-5 h-5 text-amber-400 shrink-0" />
-              <h3 className="text-base font-bold text-zinc-100 font-unbounded">Web Engineering</h3>
+              <h3 className="text-base font-bold text-zinc-100 font-unbounded">Pengembangan Web</h3>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              Developing modern web applications using React, Svelte, Next.js,
-              Laravel, and Express.js with clean architecture.
+              Mengembangkan aplikasi web modern menggunakan React, Svelte, Next.js, Laravel, dan Express.js dengan arsitektur yang terstruktur.
             </p>
           </div>
 
           <div className="bg-zinc-900/50 border border-zinc-800/80 p-5 rounded-xl flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-2.5">
               <Smartphone className="w-5 h-5 text-cyan-400 shrink-0" />
-              <h3 className="text-base font-bold text-zinc-100 font-unbounded">Mobile & AR Tech</h3>
+              <h3 className="text-base font-bold text-zinc-100 font-unbounded">Mobile & Teknologi AR</h3>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              Building cross-platform mobile apps with Flutter & Android Studio
-              alongside interactive Unity & Blender AR solutions.
+              Membangun aplikasi mobile lintas platform menggunakan Flutter dan Android Studio, serta solusi AR interaktif menggunakan Unity dan Blender.
             </p>
           </div>
 
           <div className="bg-zinc-900/50 border border-zinc-800/80 p-5 rounded-xl flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-2.5">
               <Database className="w-5 h-5 text-emerald-400 shrink-0" />
-              <h3 className="text-base font-unbounded font-bold text-zinc-100">Database & Analytics</h3>
+              <h3 className="text-base font-unbounded font-bold text-zinc-100">Database & Analitik</h3>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              Managing relational & NoSQL databases (MySQL, MongoDB) and
-              visualizing insights with Power BI & Tableau.
+              Mengelola database relasional dan NoSQL (MySQL, MongoDB), serta memvisualisasikan informasi menggunakan Power BI dan Tableau.
             </p>
           </div>
 
           <div className="bg-zinc-900/50 border border-zinc-800/80 p-5 rounded-xl flex flex-col justify-start">
             <div className="flex items-center gap-3 mb-2.5">
               <TrendingUp className="w-5 h-5 text-indigo-400 shrink-0" />
-              <h3 className="text-base font-unbounded font-bold text-zinc-100">QA & Systems Design</h3>
+              <h3 className="text-base font-unbounded font-bold text-zinc-100">QA & Perancangan Sistem</h3>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              Applying Software Testing & QA, RESTful API design with Postman,
-              and end-to-end information systems architecture.
+              Menerapkan pengujian perangkat lunak dan QA, merancang RESTful API menggunakan Postman, serta memahami arsitektur sistem informasi secara menyeluruh.
             </p>
           </div>
 
@@ -210,11 +194,10 @@ export default function AboutMeSection() {
       <div className="mt-20">
         <div className="text-center mb-8">
           <h3 className="text-xl md:text-2xl font-bold font-unbounded text-white">
-            Technologies & Tools
+            Teknologi & Tools
           </h3>
           <p className="text-xs md:text-sm text-gray-400 mt-2">
-            Programming languages, frameworks, and software tools I work with
-            (Drag/Slide to explore)
+            Bahasa pemrograman, framework, dan perangkat lunak yang saya gunakan (Geser untuk melihat lainnya)
           </p>
         </div>
 

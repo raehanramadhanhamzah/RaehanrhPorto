@@ -3,17 +3,33 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import ProjectsSection from "@/app/src//components/ProjectsView";
-import AboutMeSection from "@/app/src//components/AboutMeView";
-import ContactsSection from "@/app/src//components/ContacsView"
-import { Analytics } from "@vercel/analytics/next"
-const Lanyard = dynamic(() => import("@/app/src/components/Lanyard"), {
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter, Link } from "@/i18n/navigation";
+import ProjectsSection from "@/app/[locale]/components/ProjectsView";
+import AboutMeSection from "@/app/[locale]/components/AboutMeView";
+import ContactsSection from "@/app/[locale]/components/ContacsView";
+import { Analytics } from "@vercel/analytics/next";
+
+const Lanyard = dynamic(() => import("@/app/[locale]/components/Lanyard"), {
   ssr: false,
 });
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const t = useTranslations("Hero");
+  const nav = useTranslations("Navbar");
+
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const switchLocale = (targetLocale: "en" | "id") => {
+    router.replace(pathname, { locale: targetLocale });
+  };
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,25 +51,51 @@ export default function Home() {
           RAEHAN.
         </div>
 
-        <nav className="hidden md:flex gap-12 text-lg font-unbounded text-gray-300">
+        <nav className="hidden md:flex gap-12 text-lg font-unbounded text-gray-300 items-center">
           <a
             href="#about"
             className="px-2 py-1 cursor-pointer hover:text-amber-400 transition-colors duration-200"
           >
-            About Me
+            {nav("about")}
           </a>
           <a
             href="#projects"
             className="px-2 py-1 cursor-pointer hover:text-amber-400 transition-colors duration-200"
           >
-            Projects
+            {nav("projects")}
           </a>
           <a
             href="#contacts"
             className="px-2 py-1 cursor-pointer hover:text-amber-400 transition-colors duration-200"
           >
-            Contacts
+            {nav("contacts")}
           </a>
+
+          <div className="flex items-center gap-2">
+            <button onClick={() => switchLocale("en")}>
+              <Image
+                src="./flags/en.svg"
+                alt="English"
+                width={24}
+                height={24}
+                className={`rounded-full ${
+                  locale === "en" ? "opacity-100" : "opacity-40"
+                }`}
+              />
+            </button>
+
+            <button onClick={() => switchLocale("id")}>
+              <Image
+                src="/flags/id.svg"
+                alt="Indonesia"
+                width={24}
+                height={24}
+                className={`rounded-full ${
+                  locale === "id" ? "opacity-100" : "opacity-40"
+                }`}
+              />
+            </button>
+          </div>
         </nav>
 
         <button
@@ -79,22 +121,48 @@ export default function Home() {
               onClick={() => setMenuOpen(false)}
               className="text-lg font-medium text-gray-200 hover:text-amber-400 transition-colors cursor-pointer"
             >
-              About Me
+              {nav("about")}
             </a>
             <a
               href="#projects"
               onClick={() => setMenuOpen(false)}
               className="text-lg font-medium text-gray-200 hover:text-amber-400 transition-colors cursor-pointer"
             >
-              Projects
+              {nav("projects")}
             </a>
             <a
               href="#contacts"
               onClick={() => setMenuOpen(false)}
               className="text-lg font-medium text-gray-200 hover:text-amber-400 transition-colors cursor-pointer"
             >
-              Contacts
+              {nav("contacts")}
             </a>
+
+            <div className="flex items-center justify-center gap-2">
+            <button onClick={() => switchLocale("en")}>
+              <Image
+                src="./flags/en.svg"
+                alt="English"
+                width={24}
+                height={24}
+                className={`rounded-full ${
+                  locale === "en" ? "opacity-100" : "opacity-40"
+                }`}
+              />
+            </button>
+
+            <button onClick={() => switchLocale("id")}>
+              <Image
+                src="/flags/id.svg"
+                alt="Indonesia"
+                width={24}
+                height={24}
+                className={`rounded-full ${
+                  locale === "id" ? "opacity-100" : "opacity-40"
+                }`}
+              />
+            </button>
+          </div>
           </div>
         )}
       </header>
@@ -149,11 +217,10 @@ export default function Home() {
           )}
 
           <div className="w-full md:w-5/12 flex flex-col justify-center items-center md:items-start z-30 order-2 md:order-1 font-unbounded text-center md:text-left pointer-events-auto">
-
             <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
-              Hello, I&apos;m <br />
+              {t("greeting")} <br />
               <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
-                Raehan Ramadhan Hamzah
+                {t("name")}
               </span>
             </h1>
 
@@ -164,17 +231,15 @@ export default function Home() {
 
           <div className="font-unbounded w-full md:w-5/12 flex flex-col justify-center items-center md:items-start z-30 order-3 text-center md:text-left pointer-events-auto md:translate-x-12">
             <span className="text-xs font-mono text-amber-400 uppercase tracking-wider block mb-2">
-              — Fresh Graduate · Information Systems
+              {t("status")}
             </span>
 
             <h2 className="text-xl sm:text-2xl md:text-2xl font-bold text-white mb-3 leading-snug">
-              Building digital solutions
-              that solve real problems.
+              {t("title")}
             </h2>
 
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed w-full">
-              An Information Systems graduate focused on web and mobile
-              development, full-stack solutions, and database management.
+              {t("description")}
             </p>
           </div>
         </div>
@@ -187,7 +252,7 @@ export default function Home() {
               className="group relative inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-zinc-950 font-bold text-xs sm:text-sm tracking-wide overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] hover:-translate-y-1 active:translate-y-0 active:scale-95 cursor-pointer z-50 w-full sm:w-auto font-unbounded"
             >
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
-              <span className="relative z-10 font-bold">Unduh CV</span>
+              <span className="relative z-10 font-bold">{t("cvButton")}</span>
               <svg
                 className="relative z-10 w-4 h-4 fill-none stroke-current stroke-[2.5] transition-transform duration-300 group-hover:translate-y-0.5 group-hover:scale-110"
                 viewBox="0 0 24 24"
@@ -212,7 +277,7 @@ export default function Home() {
               >
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
               </svg>
-              <span className="font-medium">GitHub</span>
+              <span className="font-medium">{t("githubButton")}</span>
             </a>
 
             <a
@@ -227,17 +292,19 @@ export default function Home() {
               >
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
-              <span className="font-medium">LinkedIn</span>
+              <span className="font-medium">{t("linkedinButton")}</span>
             </a>
           </div>
         </div>
       </section>
+
       <AboutMeSection />
       <ProjectsSection />
       <ContactsSection />
       <Analytics />
+
       <footer className="relative py-6 text-center text-xs text-gray-500 z-20">
-        © 2026. Built with Next.js & Tailwind CSS.
+        © 2026 Raehan Ramadhan Hamzah. All rights reserved.
       </footer>
     </main>
   );

@@ -1,0 +1,59 @@
+{
+  "Navbar": {
+    "about": "Tentang Saya",
+    "projects": "Projek",
+    "contacts": "Kontak"
+  },
+  "Hero": {
+    "greeting": "Halo, Saya",
+    "name": "Raehan Ramadhan Hamzah",
+    "status": "— Lulusan Baru · Sistem Informasi",
+    "title": "Membangun solusi digital yang memecahkan masalah nyata.",
+    "description": "Lulusan Sistem Informasi yang berfokus pada pengembangan web dan seluler, solusi full-stack, serta manajemen basis data.",
+    "cvButton": "Unduh CV",
+    "githubButton": "GitHub",
+    "linkedinButton": "LinkedIn"
+  },
+   "About": {
+    "title": "Tentang Saya",
+    "heading": "Menghubungkan Sistem Informasi dan Teknologi Informasi Melalui Pemrograman",
+    "description": "Saya merupakan lulusan Sistem Informasi Universitas Hasanuddin (2022–2026) dengan fokus pada pengembangan aplikasi web full-stack, aplikasi mobile, dan analisis data. Saya memiliki dasar teknis dalam berbagai bahasa pemrograman seperti JavaScript, TypeScript, Python, PHP, Java, dan C/C++, serta framework web modern seperti Next.js, Svelte, Laravel, Express.js, dan FastAPI. Saya berpengalaman dalam merancang dan menguji RESTful API menggunakan Postman, mengelola database MySQL dan MongoDB, serta mengembangkan aplikasi mobile menggunakan Flutter dan Android Studio. Selain itu, saya menggunakan Power BI, Tableau, Blender, dan Unity untuk visualisasi data, business intelligence, pemodelan 3D, dan solusi augmented reality interaktif.",
+    "expertise": {
+      "web": {
+        "title": "Pengembangan Web",
+        "description": "Mengembangkan aplikasi web modern menggunakan React, Svelte, Next.js, Laravel, dan Express.js dengan arsitektur yang terstruktur."
+      },
+      "mobile": {
+        "title": "Mobile & Teknologi AR",
+        "description": "Membangun aplikasi mobile lintas platform menggunakan Flutter dan Android Studio, serta solusi AR interaktif menggunakan Unity dan Blender."
+      },
+      "database": {
+        "title": "Database & Analitik",
+        "description": "Mengelola database relasional dan NoSQL (MySQL, MongoDB), serta memvisualisasikan informasi menggunakan Power BI dan Tableau."
+      },
+      "qa": {
+        "title": "QA & Perancangan Sistem",
+        "description": "Menerapkan pengujian perangkat lunak dan QA, merancang RESTful API menggunakan Postman, serta memahami arsitektur sistem informasi secara menyeluruh."
+      }
+    },
+    "techStack": {
+      "title": "Teknologi & Tools",
+      "description": "Bahasa pemrograman, framework, dan perangkat lunak yang saya gunakan",
+      "instruction": "(Geser untuk melihat lainnya)"
+    }
+  },
+    "Projects": {
+      "title": "Projek",
+      "galleryButton": "Jelajahi Galeri",
+      "githubButton": "GitHub",
+      "demoButton": "Demo"
+    },
+    "Contacts": {
+      "title": "Kontak",
+      "heading": "Mari Terhubung",
+      "description": "Saat ini saya siap menerima lowongan kerja full-time yang sesuai dengan keahlian saya, peluang karier baru, atau kolaborasi profesional. Yuk, langsung hubungi saya melalui kontak di bawah!",
+      "locationLabel": "Lokasi",
+      "emailLabel": "Email",
+      "phoneLabel": "Telepon/WhatsApp"
+    }
+  }

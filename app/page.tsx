@@ -6,6 +6,7 @@ import Image from "next/image";
 import ProjectsSection from "@/app/src//components/ProjectsView";
 import AboutMeSection from "@/app/src//components/AboutMeView";
 import ContactsSection from "@/app/src//components/ContacsView"
+import { Analytics } from "@vercel/analytics/next"
 const Lanyard = dynamic(() => import("@/app/src/components/Lanyard"), {
   ssr: false,
 });
@@ -234,6 +235,7 @@ export default function Home() {
       <AboutMeSection />
       <ProjectsSection />
       <ContactsSection />
+      <Analytics />
       <footer className="relative py-6 text-center text-xs text-gray-500 z-20">
         © 2026. Built with Next.js & Tailwind CSS.
       </footer>
